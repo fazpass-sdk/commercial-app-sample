@@ -1,3 +1,47 @@
-<resources>
-    <string name="app_name">Fazpass Commercial</string>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="Typos,TypographyDashes">
+    <string name="app_name" translatable="false">Fazpass</string>
+    <string name="alt_app_name" translatable="false">Fazpass Commercial</string>
+    <string name="merchant_key" translatable="false">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoxMH0.5QuDoydheF6Crsdhx887UVnva5JtkoILLeeaSBFOnlY</string>
+    <string name="otp_sms_gateway_key" translatable="false">14882808-5e9b-42e4-b4c7-b9b0459098ac</string>
+    <string name="otp_miscall_gateway_key" translatable="false">8673a8e8-671d-4f9c-bc3f-2d94f4b7cb03</string>
+    <string name="otp_email_gateway_key" translatable="false">79e05090-2f92-4886-9395-e68b53817e2c</string>
+    <string name="person_email_default">johndoe111@gmail.com</string>
+    <string name="person_phone_default">012345678910</string>
+    <string name="log_in">Log In</string>
+    <string name="register">Register</string>
+    <string name="my_profile">My Profile</string>
+    <string name="log_out">Log Out</string>
+    <string name="short_lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vel facilisis volutpat est velit egestas dui id ornare arcu. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Consectetur purus ut faucibus pulvinar elementum integer. Mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque. Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Arcu ac tortor dignissim convallis aenean et tortor at risus. Egestas tellus rutrum tellus pellentesque eu tincidunt. Tellus integer feugiat scelerisque varius morbi. Tincidunt arcu non sodales neque sodales ut etiam sit.</string>
+
+    <string name="confirm_login_question">How would you like to confirm your identity?</string>
+    <string name="greeting_message">Welcome, <b>%1$s</b>!</string>
+    <string name="cd_notification_message">\nWe just sent a notification to the device that has been logged in to your account. Please confirm it to continue.\n</string>
+    <string name="sms_verification_message">\nWe just sent a message to your phone number. Put in the otp code from the message.\n</string>
+    <string name="phone_verification_message">\nWe just called your phone number. Put in the otp code from the call.\n</string>
+    <string name="email_verification_message">\nWe just sent an email to your email address. Put in the otp code from the email.\n</string>
+    <string name="confirming_message">\nPlease wait while we check your otp…\n</string>
+    <string name="error_message_sample">Session has expired. Please login again to renew your session.</string>
+    <string name="fazpass_init_failed_message">Failed to initialize %1$s. Check your internet and try again.</string>
+    
+    <string name="main_header_1">Instant Authentication\nPlatform for Your Business</string>
+    <string name="main_body_1">One-stop solution for a seamless, flexible, and reliable way to authenticate your users. Get connected through multiple authentication channels and providers, with a single integration.</string>
+    <string name="main_action1_1">READ MORE</string>
+    <string name="main_action2_1">DOWNLOAD WHITEPAPER</string>
+    <string name="main_header_2">How can our platform help your business?</string>
+    <string name="main_body_2">Fazpass helps businesses to always connect with their users through any authentication channel and provider of their choice, and it can be easily set and switched without integration!</string>
+    <string name="main_preheader_3">Multichannel</string>
+    <string name="main_header_3">Authentication Platform Solution For All of Bussiness</string>
+    <string name="main_header_4">Why Us</string>
+    <string name="main_body_4">Our system provides more seamless, flexible, and reliable solution to eliminate all the hustle</string>
+    <string name="main_preheader_5">Passwordless Authentication</string>
+    <string name="main_header_5">Seamless Authentication</string>
+    <string name="main_body_5">Change your authentication channel to the new seamless service. Be in a better world without passwords by adopting passwordless authentication.</string>
+    <string name="main_action_5">READ MORE</string>
+    <string name="main_preheader_6">Don\'t Know What To Start With?</string>
+    <string name="main_header_6">Get A Solutions From Our Authentication Platform</string>
+    <string name="main_action_6">TALK TO US</string>
+    <string name="copyright">Copyright © 2022 Fazpass</string>
+    <string name="company">PT. Fazpass Integrasi Indonesia</string>
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTitle">
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textSize">15pt</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:letterSpacing">0.05</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ErrorText">
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textColor">@color/error_text_color</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:text">@string/error_message_sample</item>
+    </style>
+
+    <style name="HeaderText">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="PreHeaderText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
