@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/bg_scaffold"
-    android:gravity="center"
+    android:gravity="start"
     android:orientation="vertical"
     android:padding="40dp">
 
@@ -13,6 +13,7 @@
         style="@style/AppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:textSize="18pt" />
 
@@ -20,7 +21,9 @@
         android:id="@+id/greeting_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="24dp"
+        android:gravity="center"
         android:text="@string/greeting_message"
         android:textColor="@color/default_text_color"
         android:textSize="16sp" />
@@ -29,7 +32,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="24dp"
+        android:gravity="center"
         android:text="@string/confirm_login_question"
         android:textAlignment="center"
         android:textColor="@color/default_text_color"
@@ -69,7 +74,7 @@
     <TextView
         android:id="@+id/error_txt2"
         style="@style/ErrorText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         tools:visibility="visible" />

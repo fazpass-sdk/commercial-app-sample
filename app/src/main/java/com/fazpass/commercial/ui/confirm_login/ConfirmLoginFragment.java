@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.fazpass.commercial.R;
+import com.fazpass.commercial.helper.LOGIN_TYPE;
 
 import java.util.Objects;
 
@@ -29,6 +30,7 @@ public class ConfirmLoginFragment extends Fragment {
         Bundle args = getArguments();
         mViewModel.setUser(Objects.requireNonNull(args).getStringArrayList("ARGS_USER"));
         mViewModel.setCDAvailable(args.getBoolean("ARGS_CD_IS_AVAILABLE"));
+        mViewModel.setLoginType(args.getString("ARGS_LOGIN_TYPE"));
     }
 
     @Nullable
@@ -41,13 +43,25 @@ public class ConfirmLoginFragment extends Fragment {
 
         Button cdNotifBtn = v.findViewById(R.id.cd_notif_btn);
         if (!mViewModel.isCDAvailable()) cdNotifBtn.setEnabled(false);
-        cdNotifBtn.setOnClickListener(view -> mViewModel.crossDeviceNotificationOption());
+        else cdNotifBtn.setOnClickListener(view -> mViewModel.crossDeviceNotificationOption());
+
         Button smsVerBtn = v.findViewById(R.id.sms_ver_btn);
-        smsVerBtn.setOnClickListener(view -> mViewModel.smsVerificationOption());
         Button miscallVerBtn = v.findViewById(R.id.miscall_ver_btn);
-        miscallVerBtn.setOnClickListener(view -> mViewModel.miscallVerificationOption());
+        if (mViewModel.getLoginType() == LOGIN_TYPE.phone) {
+            smsVerBtn.setOnClickListener(view -> mViewModel.smsVerificationOption());
+            miscallVerBtn.setOnClickListener(view -> mViewModel.miscallVerificationOption());
+        } else {
+            smsVerBtn.setVisibility(View.GONE);
+            miscallVerBtn.setVisibility(View.GONE);
+        }
+
         Button emailVerBtn = v.findViewById(R.id.email_ver_btn);
-        emailVerBtn.setOnClickListener(view -> mViewModel.emailVerificationOption());
+        if (mViewModel.getLoginType() == LOGIN_TYPE.email) {
+            emailVerBtn.setOnClickListener(view -> mViewModel.emailVerificationOption());
+        }
+        else {
+            emailVerBtn.setVisibility(View.GONE);
+        }
 
         errorTxt = v.findViewById(R.id.error_txt2);
 

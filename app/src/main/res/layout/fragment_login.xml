@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@color/bg_scaffold"
     android:orientation="vertical"
+    android:layout_gravity="start"
     android:padding="40dp">
 
     <TextView
@@ -12,28 +13,18 @@
         style="@style/AppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="32dp"
         android:textSize="18pt" />
 
     <EditText
-        android:id="@+id/email_input"
+        android:id="@+id/login_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/gray_dark" />
-
-    <EditText
-        android:id="@+id/phone_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="phone"
+        android:hint="Email / Phone Number"
+        android:inputType="textEmailAddress|phone"
         android:minHeight="48dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray_dark" />
@@ -52,7 +43,7 @@
     <TextView
         android:id="@+id/error_txt"
         style="@style/ErrorText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         tools:visibility="visible" />

@@ -1,6 +1,5 @@
 package com.fazpass.commercial.ui.confirm_login;
 
-import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -10,6 +9,7 @@ import androidx.navigation.Navigation;
 
 import com.fazpass.commercial.R;
 import com.fazpass.commercial.component.DialogInputNumber;
+import com.fazpass.commercial.helper.LOGIN_TYPE;
 import com.fazpass.commercial.helper.Storage;
 import com.fazpass.commercial.object.User;
 import com.fazpass.trusted_device.CrossDeviceListener;
@@ -28,6 +28,7 @@ public class ConfirmLoginViewModel extends ViewModel {
     private User user;
     private boolean isCDAvailable;
     private ConfirmLoginFragment fragment;
+    private LOGIN_TYPE loginType;
 
     public void initialize(ConfirmLoginFragment fragment) {
         this.fragment = fragment;
@@ -41,6 +42,14 @@ public class ConfirmLoginViewModel extends ViewModel {
         isCDAvailable = CDAvailable;
     }
 
+    public LOGIN_TYPE getLoginType() {
+        return loginType;
+    }
+
+    public void setLoginType(String loginType) {
+        this.loginType = LOGIN_TYPE.valueOf(loginType);
+    }
+
     public User getUser() {
         return user;
     }
@@ -50,16 +59,6 @@ public class ConfirmLoginViewModel extends ViewModel {
             Iterator<String> iterator = argsUser.iterator();
             this.user = new User(iterator.next(), iterator.next(), iterator.next(), iterator.next(), iterator.next(), iterator.next());
         }
-    }
-
-    public void navigateUp() {
-        Bundle args = new Bundle();
-        args.putString("ARGS_EMAIL", user.getEmail());
-        args.putString("ARGS_PHONE", user.getPhone());
-        args.putString("ARGS_PIN", user.getPin());
-
-        Navigation.findNavController(fragment.requireView())
-                .navigate(R.id.action_confirmLoginFragment_to_loginFragment, args);
     }
 
     public void crossDeviceNotificationOption() {

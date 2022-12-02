@@ -24,6 +24,7 @@
     <string name="confirming_message">\nPlease wait while we check your otp…\n</string>
     <string name="error_message_sample">Session has expired. Please login again to renew your session.</string>
     <string name="fazpass_init_failed_message">Failed to initialize %1$s. Check your internet and try again.</string>
+    <string name="login_info">*currently, phone number only works in indonesia</string>
     
     <string name="main_header_1">Instant Authentication\nPlatform for Your Business</string>
     <string name="main_body_1">One-stop solution for a seamless, flexible, and reliable way to authenticate your users. Get connected through multiple authentication channels and providers, with a single integration.</string>

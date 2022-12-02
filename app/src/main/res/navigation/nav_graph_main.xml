@@ -14,7 +14,9 @@
             android:id="@+id/action_splashFragment_to_mainFragment"
             app:destination="@id/mainFragment"
             app:enterAnim="@anim/slide_in_bottom"
-            app:exitAnim="@anim/slide_out_top" />
+            app:exitAnim="@anim/slide_out_top"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment

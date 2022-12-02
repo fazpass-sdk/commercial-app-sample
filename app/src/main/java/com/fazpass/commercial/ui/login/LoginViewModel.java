@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.navigation.Navigation;
 
 import com.fazpass.commercial.R;
+import com.fazpass.commercial.helper.LOGIN_TYPE;
 import com.fazpass.commercial.helper.Storage;
 import com.fazpass.commercial.object.User;
 import com.fazpass.trusted_device.CROSS_DEVICE;
@@ -21,6 +22,7 @@ public class LoginViewModel extends ViewModel {
 
     private LoginFragment fragment;
     private AlertDialog dialog;
+    private LOGIN_TYPE loginType;
 
     public void initialize(LoginFragment fragment) {
         this.fragment = fragment;
@@ -38,17 +40,36 @@ public class LoginViewModel extends ViewModel {
         dialog = builder.create();
     }
 
-    public void login(String email, String phone, String pin) {
-        if (email.isEmpty() || phone.isEmpty() || pin.isEmpty()) {
+    public void login(String login, String pin) {
+        if (login.isEmpty() || pin.isEmpty()) {
             failedLogin("Please fill in all of this form.");
             return;
         }
 
-        dialog.show();
+        loginType = null;
+        try {
+            Double.parseDouble(login);
+            loginType = LOGIN_TYPE.phone;
+        } catch (NumberFormatException ignored) {}
+        if (loginType==null && login.contains("@")) {
+            loginType = LOGIN_TYPE.email;
+        }
+        if (loginType==null) {
+            failedLogin("Input is neither email nor phone number.");
+            return;
+        }
 
-        User u = new User(email, phone, email.split("@")[0],"","", pin);
+        User u;
+        if (loginType==LOGIN_TYPE.email) {
+            u = new User(login, "-", login.split("@")[0],"","", pin);
+        }
+        else {
+            u = new User("null@null.com", login, "","","", pin);
+        }
         User.setIsUseFinger(false);
-        Fazpass.check(fragment.getContext(), email, phone, pin, new TrustedDeviceListener<FazpassTd>() {
+
+        dialog.show();
+        Fazpass.check(fragment.getContext(), u.getEmail(), u.getPhone(), pin, new TrustedDeviceListener<FazpassTd>() {
             @Override
             public void onSuccess(FazpassTd o) {
                 dialog.dismiss();
@@ -87,6 +108,7 @@ public class LoginViewModel extends ViewModel {
         Bundle args = new Bundle();
         args.putStringArrayList("ARGS_USER", list);
         args.putBoolean("ARGS_CD_IS_AVAILABLE", cd_status.equals(CROSS_DEVICE.AVAILABLE));
+        args.putString("ARGS_LOGIN_TYPE", loginType.toString());
         Navigation.findNavController(fragment.requireView())
                 .navigate(R.id.action_loginFragment_to_confirmLoginFragment, args);
     }
