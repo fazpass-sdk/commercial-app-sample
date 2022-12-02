@@ -6,6 +6,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.fazpass.commercial.R;
 import com.fazpass.commercial.helper.Storage;
 import com.fazpass.commercial.object.User;
+import com.fazpass.trusted_device.Fazpass;
 
 public class ProfileViewModel extends ViewModel {
 
@@ -25,6 +26,7 @@ public class ProfileViewModel extends ViewModel {
     }
 
     public void logout() {
+        Fazpass.removeDevice(fragment.requireActivity().getApplicationContext());
         Storage.logout(fragment.requireContext());
 
         NavHostFragment.findNavController(fragment)

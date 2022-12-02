@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Email / Phone Number"
-        android:inputType="textEmailAddress|phone"
+        android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textColor="@color/black"
         android:textColorHint="@color/gray_dark" />
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Password"
+        android:hint="PIN"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColor="@color/black"
@@ -61,6 +61,6 @@
         style="@style/ElevatedButton"
         android:layout_width="match_parent"
         android:layout_marginTop="16dp"
-        android:text="Login" />
+        android:text="@string/register" />
 
 </LinearLayout>

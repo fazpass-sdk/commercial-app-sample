@@ -64,7 +64,7 @@ public class LoginViewModel extends ViewModel {
             u = new User(login, "-", login.split("@")[0],"","", pin);
         }
         else {
-            u = new User("null@null.com", login, "","","", pin);
+            u = new User("none@mail.com", login, "","","", pin);
         }
         User.setIsUseFinger(false);
 

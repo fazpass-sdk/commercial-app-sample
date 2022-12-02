@@ -2,9 +2,9 @@
     tools:ignore="Typos,TypographyDashes">
     <string name="app_name" translatable="false">Fazpass</string>
     <string name="alt_app_name" translatable="false">Fazpass Commercial</string>
-    <string name="merchant_key" translatable="false">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoxMH0.5QuDoydheF6Crsdhx887UVnva5JtkoILLeeaSBFOnlY</string>
-    <string name="otp_sms_gateway_key" translatable="false">14882808-5e9b-42e4-b4c7-b9b0459098ac</string>
-    <string name="otp_miscall_gateway_key" translatable="false">8673a8e8-671d-4f9c-bc3f-2d94f4b7cb03</string>
+    <string name="merchant_key" translatable="false">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjozfQ.1ye0zSaJgWPB5_SUU7oSDHKAs4tKjz_5RVtDnvc-HoE</string>
+    <string name="otp_sms_gateway_key" translatable="false">ea42280a-cc86-4838-b883-a687ac7d0082</string>
+    <string name="otp_miscall_gateway_key" translatable="false">3be25707-e781-4237-8eb7-033671aa89a1</string>
     <string name="otp_email_gateway_key" translatable="false">79e05090-2f92-4886-9395-e68b53817e2c</string>
     <string name="person_email_default">johndoe111@gmail.com</string>
     <string name="person_phone_default">012345678910</string>
