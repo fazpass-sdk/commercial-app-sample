@@ -231,21 +231,23 @@ public class ConfirmLoginViewModel extends ViewModel {
         Fazpass.validateOtp(fragment.requireContext(), otpId, inputtedOtp, new Otp.Validate() {
             @Override
             public void onComplete(boolean isSuccess) {
-                dialog.dismiss();
-
+                
                 if (isSuccess) {
                     Fazpass.check(fragment.requireContext(), user.getEmail(), user.getPhone(), user.getPin(), new TrustedDeviceListener<FazpassTd>() {
                         @Override
                         public void onSuccess(FazpassTd fazpassTd) {
+                            dialog.dismiss();
                             enroll(fazpassTd);
                         }
 
                         @Override
                         public void onFailure(Throwable throwable) {
+                            dialog.dismiss();
                             failedLogin("Failed to check device. Please try again.");
                         }
                     });
                 } else {
+                    dialog.dismiss();
                     failedLogin("Wrong OTP code.");
                 }
             }
